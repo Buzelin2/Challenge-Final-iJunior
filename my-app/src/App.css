@@ -15,6 +15,40 @@
   width: 14vw;
   background-color: black;
 }
+
+.esquerda p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CCCCCC;
+  margin-top: 1rem;
+  width: 100%;
+  border: 1px red solid;
+  cursor: pointer;
+}
+
+.esquerda h1{
+  color: #FFFFFF;
+  display: flex;
+  align-items:flex-start;
+}
+
+.registrated{
+  width: 24px;
+  margin-left: 0.2rem;
+}
+
+.esquerda-box{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  height: 82%;
+}
+
+.logout{
+  margin-top: 48rem;
+}
+
 .main{
   width: 86vw;
   height: 100%vw;

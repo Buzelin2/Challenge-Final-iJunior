@@ -59,7 +59,49 @@ function App() {
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,300,0,0"
       />
 
-      <div className="esquerda"></div>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+      />
+
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+      />
+
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+      />
+
+      <div className="esquerda">
+        <div className="esquerda-box">
+          <h1>
+            iSpotify
+            <img
+              src="icons8-registered-48.png"
+              alt=""
+              className="registrated"
+            />
+          </h1>
+          <div className="artistas-musicas">
+            <p>
+              <span class="material-symbols-outlined">album</span>
+              Artistas
+            </p>
+            <p>
+              <span class="material-symbols-outlined">favorite</span>
+              Músicas Curtidas
+            </p>
+          </div>
+          <div className="logout">
+            <p>
+              <span class="material-symbols-outlined">logout</span>
+              Logout
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="main">
         <div className="upper">
@@ -74,11 +116,11 @@ function App() {
 
         <div className="icons-top">
           <img src="icons8-circled-play-65.png" alt="" className="play" />
-          <img src="Property 1=Default.png" alt="" className="hearth"/>
+          <img src="Property 1=Default.png" alt="" className="hearth" />
           <span class="material-symbols-outlined md-36" id="download">
             download_for_offline
           </span>
-          <img src="icons8-ellipsis-35.png" alt="" className="three-dots"/>
+          <img src="icons8-ellipsis-35.png" alt="" className="three-dots" />
         </div>
 
         <div class="cabeçalhoMusica">
