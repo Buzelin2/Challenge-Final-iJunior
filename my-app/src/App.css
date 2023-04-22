@@ -16,41 +16,9 @@
   background-color: black;
 }
 
-.esquerda p{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #CCCCCC;
-  margin-top: 1rem;
-  width: 100%;
-  cursor: pointer;
-}
-
-.esquerda h1{
-  color: #FFFFFF;
-  display: flex;
-  align-items:flex-start;
-}
-
-.registrated{
-  width: 24px;
-  margin-left: 0.2rem;
-}
-
-.esquerda-box{
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-  height: 82%;
-}
-
-.logout{
-  margin-top: 48rem;
-}
-
 .main{
   width: 86vw;
-  height: 100%vw;
+  height: 100%;
   background-image: linear-gradient(to bottom, rgb(0, 174, 255) 10%, rgb(15, 15, 15)70% );
 }
 .album{
@@ -208,4 +176,36 @@ background: #D9D9D9;
 .three-dots{
   margin-left: 1rem;
   cursor: pointer;
+}
+
+.esquerda p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #CCCCCC;
+  margin-top: 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.esquerda h1{
+  color: #FFFFFF;
+  display: flex;
+  align-items:flex-start;
+}
+
+.registrated{
+  width: 24px;
+  margin-left: 0.2rem;
+}
+
+.esquerda-box{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  height: 82%;
+}
+
+.logout{
+  margin-top: 48rem;
 }
