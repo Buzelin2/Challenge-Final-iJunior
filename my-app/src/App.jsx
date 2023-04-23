@@ -18,33 +18,38 @@ function deletar(dnum) {
   }
 }
 function mudarcor(num) {
+  const imgcv = 'Property 1=Variant2.png'
+  const imgc = 'Property 1=Default.png'
   if (num === 1) {
     const meubotao = document.querySelector("#cr1");
-
-    if (meubotao.style.backgroundColor === "green") {
-      meubotao.style.backgroundColor = "transparent";
+    const imagen1 = meubotao.querySelector("#imagem1");
+    
+   
+    if (imagen1.getAttribute('src') === "Property 1=Default.png") {
+      
+      imagen1.setAttribute('src', imgcv);
     } else {
-      meubotao.style.backgroundColor = "green";
+      imagen1.setAttribute('src', imgc);
     }
   }
 
   if (num === 2) {
     const meubotao = document.querySelector("#cr2");
-
-    if (meubotao.style.backgroundColor === "green") {
-      meubotao.style.backgroundColor = "transparent";
+    const imagen1 = meubotao.querySelector("#imagem2");
+    if (imagen1.getAttribute('src') === "Property 1=Default.png") {
+      imagen1.setAttribute('src', imgcv);
     } else {
-      meubotao.style.backgroundColor = "green";
+      imagen1.setAttribute('src', imgc);
     }
   }
 
   if (num === 3) {
     const meubotao = document.querySelector("#cr3");
-
-    if (meubotao.style.backgroundColor === "green") {
-      meubotao.style.backgroundColor = "transparent";
+    const imagen1 = meubotao.querySelector("#imagem3");
+    if (imagen1.getAttribute('src') === "Property 1=Default.png") {
+      imagen1.setAttribute('src', imgcv);
     } else {
-      meubotao.style.backgroundColor = "green";
+      imagen1.setAttribute('src', imgc);
     }
   }
 }
@@ -138,7 +143,7 @@ function App() {
             </div>
             <span class="Album">By The Way</span>
             <button onClick={() => mudarcor(1)} class="coraçao" id="cr1">
-              <img src="Property 1=Default.png"></img>
+              <img  src="Property 1=Default.png" id="imagem1"></img>
             </button>
             <button onClick={() => deletar(1)} class="Relogio">
               <div className="re1">
@@ -156,7 +161,7 @@ function App() {
             </div>
             <span class="Album">X&Y</span>
             <button onClick={() => mudarcor(2)} class="coraçao" id="cr2">
-              <img src="Property 1=Default.png"></img>
+              <img src="Property 1=Default.png"  id="imagem2"></img>
             </button>
             <button onClick={() => deletar(2)} class="Relogio">
               <div className="re1">
@@ -174,7 +179,7 @@ function App() {
             </div>
             <span class="Album">Cidade Negra Acústico MTV</span>
             <button onClick={() => mudarcor(3)} class="coraçao" id="cr3">
-              <img src="Property 1=Default.png"></img>
+              <img src="Property 1=Default.png"  id="imagem3"></img>
             </button>
             <button onClick={() => deletar(3)} class="Relogio">
               <div className="re1">
