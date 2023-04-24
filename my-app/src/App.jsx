@@ -121,7 +121,7 @@ function App() {
 
         <div className="icons-top">
           <img src="icons8-circled-play-65.png" alt="" className="play" />
-          <img src="Property 1=Default.png" alt="" className="hearth" />
+          <img src="Property 1=Default.png" alt="" className="heart" />
           <span class="material-symbols-outlined md-36" id="download">
             download_for_offline
           </span>
@@ -143,7 +143,7 @@ function App() {
             </div>
             <span class="Album">By The Way</span>
             <button onClick={() => mudarcor(1)} class="coraçao" id="cr1">
-              <img  src="Property 1=Default.png" id="imagem1"></img>
+              <img  src="Property 1=Default.png" className="heart" id="imagem1"></img>
             </button>
             <button onClick={() => deletar(1)} class="Relogio">
               <div className="re1">
@@ -161,7 +161,7 @@ function App() {
             </div>
             <span class="Album">X&Y</span>
             <button onClick={() => mudarcor(2)} class="coraçao" id="cr2">
-              <img src="Property 1=Default.png"  id="imagem2"></img>
+              <img src="Property 1=Default.png"  className="heart" id="imagem2"></img>
             </button>
             <button onClick={() => deletar(2)} class="Relogio">
               <div className="re1">
@@ -179,7 +179,7 @@ function App() {
             </div>
             <span class="Album">Cidade Negra Acústico MTV</span>
             <button onClick={() => mudarcor(3)} class="coraçao" id="cr3">
-              <img src="Property 1=Default.png"  id="imagem3"></img>
+              <img src="Property 1=Default.png"  className="heart" id="imagem3"></img>
             </button>
             <button onClick={() => deletar(3)} class="Relogio">
               <div className="re1">
