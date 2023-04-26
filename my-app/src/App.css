@@ -206,7 +206,16 @@ background: #D9D9D9;
   height: 105vh;
 }
 
-
+.alo{
+  margin-top: 0vw;
+  width: 4vw;
+  margin-right: 0.3vw;
+}
+.alo2{
+  width: 2.7vw;
+  margin-left: -1vw;
+  margin-right: 0.5vw;
+}
 
 
 
@@ -248,12 +257,8 @@ background: #D9D9D9;
 .material-symbols-outlined{
   margin-left: -16.5vw;
 }
-.alo{
-  margin-top: -20vw;
-}
-.alo2{
-  margin-top: -10vw;
-}
+
+
 .App{
   width: 100vw;
   height: 100vh;
@@ -273,5 +278,87 @@ background: #D9D9D9;
 }
 .album{
   width: 20vw;
+}
+.playlist{
+  font-size: 2vw;
+}
+.daily{
+  font-size: 5vw;
+}
+.texto3{
+  font-size: 2vw;
+  margin-top: 0.5vw;
+}
+.titulo, .alb, .relogio{
+  display: inline;
+  color: #D9D9D9;
+  font-size: 2.0vw;
+  margin-bottom: 1vw;
+}
+.linha{
+  width: 92vw;
+  margin-left: 3.7vw;
+  margin-top: 1vw;
+  margin-bottom: 2.4vw;
+}
+.alb{
+  margin-left: 31.5vw;
+}
+.relogio{
+  margin-left: 21vw;
+}
+.musica{
+  color: #fff;
+  margin-left: 3.8vw;
+  font-size: 2.2vw;
+  margin-bottom: 3vw;
+  flex-wrap: nowrap;
+}
+.coraçao{
+  margin-left: 9.5vw;
+  background-color: transparent;
+  border: 0px;
+  cursor: pointer;
+}
+.play{
+  width: 8vw;
+}
+.heart{
+  width: 6vw;
+  border: 0;
+}
+#download{
+  width: 7vw;
+}
+.three-dots{
+  width: 4.8vw;
+}
+.re1{
+  position: absolute;
+width: 2vw;
+height: 2.42vw;
+margin-left: -0.1vw;
+margin-top: -1vw;
+
+background: #D9D9D9;
+border-radius: 0px 0px 4.44px 4.44px;
+}
+.re2{
+  position: absolute;
+width: 2.4vw;
+height: 0.24vw;
+bottom: 2.61vw;
+right: -0.2vw;
+
+background: #D9D9D9;
+}
+.re3{
+  position: absolute;
+  width: 0.8vw;
+  height: 0.24vw;
+  bottom: 3vw;
+  left: 0.64vw;
+  
+  background: #D9D9D9;
 }
 }

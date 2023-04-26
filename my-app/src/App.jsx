@@ -91,11 +91,11 @@ function App() {
           </h1>
           <div className="artistas-musicas">
             <p className="alo3">
-              <span class="material-symbols-outlined alo">album</span>
+              <img className="alo2" src="1378161.png"></img>
               <span className="oi">Artistas</span>
             </p>
             <p>
-              <span class="material-symbols-outlined alo">favorite</span>
+            <img className="alo" src="Property 1=Default.png"></img>
               <span className="oi">Músicas Curtidas</span>
             </p>
           </div>
@@ -122,9 +122,8 @@ function App() {
         <div className="icons-top">
           <img src="icons8-circled-play-65.png" alt="" className="play" />
           <img src="Property 1=Default.png" alt="" className="heart" />
-          <span class="material-symbols-outlined md-36" id="download">
-            download_for_offline
-          </span>
+          <img src="download-icon-down-arrow-23.png" id="download"></img>
+            
           <img src="icons8-ellipsis-35.png" alt="" className="three-dots" />
         </div>
 
