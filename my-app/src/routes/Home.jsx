@@ -52,56 +52,10 @@ function mudarcor(num) {
 }
 
 const Home = () => {
+  const [color, setcolor] = useState();
+  
   return (
-    <div className="App">
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,1000..700,0..1,-50..200"
-      />
-
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
-      />
-
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
-      />
-
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
-      />
-
-      <div className="esquerda">
-        <div className="esquerda-box">
-          <h1 className="ispot">
-            iSpotify
-            <img
-              src="img/icons8-registered-48.png"
-              alt=""
-              className="registrated"
-            />
-          </h1>
-          <div className="artistas-musicas">
-            <p className="alo3">
-              <img className="alo2" src="img/1378161.png"></img>
-              <span className="oi">Artistas</span>
-            </p>
-            <p>
-              <img className="alo" src="img/Property 1=Default.png"></img>
-              <span className="oi">Músicas Curtidas</span>
-            </p>
-          </div>
-          <div className="logout">
-            <p>
-              <span class="material-symbols-outlined alo">logout</span>
-              <span className="oi">Logout</span>
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="Home">
 
       <div className="main">
         <div className="upper">
@@ -122,28 +76,28 @@ const Home = () => {
           <img src="img/icons8-ellipsis-35.png" alt="" className="three-dots" />
         </div>
 
-        <div class="cabeçalhoMusica">
-          <span class="titulo">#TITULO</span>
-          <span class="alb">ÁLBUM</span>
-          <span class="relogio">REL</span>
+        <div className="cabeçalhoMusica">
+          <span className="titulo">#TITULO</span>
+          <span className="alb">ÁLBUM</span>
+          <span className="relogio">REL</span>
 
-          <hr class="linha"></hr>
+          <hr className="linha"></hr>
 
-          <div class="musica" id="ms0">
-            <span class="numMusica">1</span>
-            <div class="Musica">
+          <div className="musica" id="ms0">
+            <span className="numMusica">1</span>
+            <div className="Musica">
               <p>The Zephyr Song</p>
               <p>Red Hot Chili Pepers</p>
             </div>
-            <span class="Album">By The Way</span>
-            <button onClick={() => mudarcor(1)} class="coraçao" id="cr1">
+            <span className="Album">By The Way</span>
+            <button onClick={() => mudarcor(1)} className="coraçao" id="cr1">
               <img
                 src="img/Property 1=Default.png"
                 className="heart"
                 id="imagem1"
               ></img>
             </button>
-            <button onClick={() => deletar(1)} class="Relogio">
+            <button onClick={() => deletar(1)} className="Relogio">
               <div className="re1">
                 <div className="re2"></div>
                 <div className="re3"></div>
@@ -151,21 +105,21 @@ const Home = () => {
             </button>
           </div>
 
-          <div class="musica" id="ms1">
-            <span class="numMusica">2</span>
-            <div class="Musica">
+          <div className="musica" id="ms1">
+            <span className="numMusica">2</span>
+            <div className="Musica">
               <p>Talk </p>
               <p>Coldplay</p>
             </div>
-            <span class="Album">X&Y</span>
-            <button onClick={() => mudarcor(2)} class="coraçao" id="cr2">
+            <span className="Album">X&Y</span>
+            <button onClick={() => mudarcor(2)} className="coraçao" id="cr2">
               <img
                 src="img/Property 1=Default.png"
                 className="heart"
                 id="imagem2"
               ></img>
             </button>
-            <button onClick={() => deletar(2)} class="Relogio">
+            <button onClick={() => deletar(2)} className="Relogio">
               <div className="re1">
                 <div className="re2"></div>
                 <div className="re3"></div>
@@ -173,21 +127,21 @@ const Home = () => {
             </button>
           </div>
 
-          <div class="musica" id="ms2">
-            <span class="numMusica">3</span>
-            <div class="Musica">
+          <div className="musica" id="ms2">
+            <span className="numMusica">3</span>
+            <div className="Musica">
               <p>Cidade Negra</p>
               <p>Firmamento</p>
             </div>
-            <span class="Album">Cidade Negra Acústico MTV</span>
-            <button onClick={() => mudarcor(3)} class="coraçao" id="cr3">
+            <span className="Album">Cidade Negra Acústico MTV</span>
+            <button onClick={() => mudarcor(3)} className="coraçao" id="cr3">
               <img
                 src="img/Property 1=Default.png"
                 className="heart"
                 id="imagem3"
               ></img>
             </button>
-            <button onClick={() => deletar(3)} class="Relogio">
+            <button onClick={() => deletar(3)} className="Relogio">
               <div className="re1">
                 <div className="re2"></div>
                 <div className="re3"></div>

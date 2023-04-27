@@ -1,12 +1,11 @@
-.esquerda{
-  width: 14vw;
-  background-color: black;
-  height: 100%;
+.Home {
+  display: flex;
+  height: 120vh;
 }
 
 .main{
-  width: 86vw;
-  height: 120vh;
+  width: 84.91vw;
+  height: 126vh;
   background-image: linear-gradient(to bottom, rgb(0, 174, 255) 10%, rgb(15, 15, 15)70% );
 }
 .album{
@@ -138,7 +137,7 @@ background: #D9D9D9;
 /* Icones Topo */
 .icons-top{
   position: absolute;
-  top: 32vw;
+  top: 29vw;
   left: 17vw;
   display: flex;
   align-items: center;
@@ -186,29 +185,7 @@ background: #D9D9D9;
   margin-left: 0.2vw;
 }
 
-.esquerda-box{
-  display: flex;
-  flex-direction: column;
-  padding: 3vw;
-  height: 105vh;
-}
 
-.alo{
-  margin-top: 0vw;
-  width: 4vw;
-  margin-right: 0.3vw;
-}
-.alo2{
-  width: 2.7vw;
-  margin-left: -1vw;
-  margin-right: 0.5vw;
-}
-
-
-
-.logout{
-  margin-top: auto;
-}
 .play{
   width: 4.5vw;
 }
@@ -222,14 +199,12 @@ background: #D9D9D9;
 .three-dots{
   width: 2.4vw;
 }
-.oi{
-  font-size: 1vw;
-}
+
 
 
 @media screen and (min-width:300px) and (max-width:768px) {
 
-.icons-top{
+/* .icons-top{
   margin-left: -13vw;
 }
 .esquerda{
@@ -243,10 +218,10 @@ background: #D9D9D9;
 }
 .material-symbols-outlined{
   margin-left: -16.5vw;
-}
+} */
 
 
-.App{
+.Home{
   width: 100vw;
   height: 100vh;
 }

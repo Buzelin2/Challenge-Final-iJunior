@@ -1,0 +1,36 @@
+.esquerda {
+  width: 14vw;
+  background-color: black;
+}
+
+.esquerda a{
+  text-decoration: none;
+  color: #CCCCCC;
+}
+
+.esquerda-box {
+  display: flex;
+  flex-direction: column;
+  padding: 3vw;
+  height: 113vh;
+}
+
+.alo2{
+  width: 2.7vw;
+  margin-left: -1vw;
+  margin-right: 0.5vw;
+}
+
+.alo{
+  margin-top: 0vw;
+  width: 4vw;
+  margin-right: 0.3vw;
+}
+
+.oi{
+  font-size: 1vw;
+}
+
+.logout{
+  margin-top: auto;
+}

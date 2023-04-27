@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
+import LeftNavBar from "./components/LeftNavBar";
+
+import { Outlet } from 'react-router-dom'
+
 function App() {
-  const [color, setcolor] = useState();
 
   return (
-    <div></div>
+    <div className="App">
+      <LeftNavBar />
+      <Outlet />
+    </div>
   );
 }
 
