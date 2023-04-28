@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    border: 0;
+    font-family: "Inter";
+    font-style: normal;
+}
+.artistas-main{
+    background-color: rgb(21, 21, 21);
+    width: 100%;
+}
+.div1{
+    display: flex;
+    margin-left: 5vw;
+    margin-top: 11vw;
+}
+.div2{
+    display: flex;
+    margin-left: 5vw;
+}
+.artista{
+    background-color: rgb(34, 34, 34);
+    width: 13vw;
+    height: 17vw;
+    margin-left: 1.5vw;
+    margin-bottom: 2.5vw;
+    border-radius: 1vw;
+}
+.text-top{
+    color: white;
+    font-size: 2vw;
+    position: absolute;
+    margin-top: 7vw;
+    margin-left: 6.5vw;
+    font-weight: bold;
+}
+.art-text{
+    font-size: 0.9vw;
+    margin-top: 14vw;
+    margin-left: 1vw;
+    color: rgb(191, 191, 191);
+}
