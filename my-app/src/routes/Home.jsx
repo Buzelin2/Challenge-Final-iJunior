@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import "./Home.css";
-import axios from 'axios';
+
 
 function Musica(props) {
   const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
