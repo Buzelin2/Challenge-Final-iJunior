@@ -1,6 +1,84 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import "./Home.css";
+import axios from 'axios';
+
+function Musica(props) {
+  const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
+
+  function handleClickFavorita() {
+    onToggleFavorita();
+  }
+
+  function handleClickDeletar() {
+    onDelete();
+  }
+  return (
+    <div className="musica" id={`ms${index}`}>
+      <span className="numMusica">{index + 1}</span>
+      <div className="Musica">
+        <p>{nome}</p>
+        <p>{artista}</p>
+      </div>
+      <span className="Album">{album}</span>
+      <button onClick={handleClickFavorita} className="coraçao" id={`cr${index}`}>
+        <img src={favorita ? imagemFavorita : "img/Property 1=Default.png"} className="heart" id={`imagem${index}`} />
+      </button>
+      <button onClick={handleClickDeletar} className="Relogio">
+        <div className="re1">
+          <div className="re2"></div>
+          <div className="re3"></div>
+        </div>
+      </button>
+    </div>
+  );
+}
+
+function ListaMusicas() {
+  const [musicas, setMusicas] = useState([
+    { id: 1, nome: "The Zephyr Song", artista: "Red Hot Chili Pepers", album: "By The Way", favorita: false },
+    { id: 2, nome: "Talk", artista: "Coldplay", album: "X&Y", favorita: false },
+    { id: 3, nome: "Firmamento", artista: "Cidade Negra", album: "Cidade Negra Acústico MTV", favorita: false }
+  ]);
+
+  const [imagemFavorita, setImagemFavorita] = useState("img/Property 1=Default.png");
+
+  function deletar(index) {
+    const novasMusicas = [...musicas];
+    novasMusicas.splice(index, 1);
+    setMusicas(novasMusicas);
+  }
+
+  function mudarcor(index) {
+    const novasMusicas = [...musicas];
+    novasMusicas[index].favorita = !novasMusicas[index].favorita;
+    setMusicas(novasMusicas);
+
+    if (novasMusicas[index].favorita) {
+      setImagemFavorita("img/Property 1=Variant2.png");
+    } else {
+      setImagemFavorita("img/Property 1=Default.png");
+    }
+  }
+
+  return (
+    <div>
+      {musicas.map((musica, index) => (
+        <Musica
+          key={musica.id}
+          index={index}
+          nome={musica.nome}
+          artista={musica.artista}
+          album={musica.album}
+          favorita={musica.favorita}
+          imagemFavorita={imagemFavorita}
+          onDelete={() => deletar(index)}
+          onToggleFavorita={() => mudarcor(index)}
+        />
+      ))}
+    </div>
+  );
+}
 
 function deletar(dnum) {
   if (dnum === 1) {
@@ -53,7 +131,7 @@ function mudarcor(num) {
 
 const Home = () => {
   const [color, setcolor] = useState();
-  
+
   return (
     <div className="Home">
 
@@ -83,70 +161,8 @@ const Home = () => {
 
           <hr className="linha"></hr>
 
-          <div className="musica" id="ms0">
-            <span className="numMusica">1</span>
-            <div className="Musica">
-              <p>The Zephyr Song</p>
-              <p>Red Hot Chili Pepers</p>
-            </div>
-            <span className="Album">By The Way</span>
-            <button onClick={() => mudarcor(1)} className="coraçao" id="cr1">
-              <img
-                src="img/Property 1=Default.png"
-                className="heart"
-                id="imagem1"
-              ></img>
-            </button>
-            <button onClick={() => deletar(1)} className="Relogio">
-              <div className="re1">
-                <div className="re2"></div>
-                <div className="re3"></div>
-              </div>
-            </button>
-          </div>
-
-          <div className="musica" id="ms1">
-            <span className="numMusica">2</span>
-            <div className="Musica">
-              <p>Talk </p>
-              <p>Coldplay</p>
-            </div>
-            <span className="Album">X&Y</span>
-            <button onClick={() => mudarcor(2)} className="coraçao" id="cr2">
-              <img
-                src="img/Property 1=Default.png"
-                className="heart"
-                id="imagem2"
-              ></img>
-            </button>
-            <button onClick={() => deletar(2)} className="Relogio">
-              <div className="re1">
-                <div className="re2"></div>
-                <div className="re3"></div>
-              </div>
-            </button>
-          </div>
-
-          <div className="musica" id="ms2">
-            <span className="numMusica">3</span>
-            <div className="Musica">
-              <p>Cidade Negra</p>
-              <p>Firmamento</p>
-            </div>
-            <span className="Album">Cidade Negra Acústico MTV</span>
-            <button onClick={() => mudarcor(3)} className="coraçao" id="cr3">
-              <img
-                src="img/Property 1=Default.png"
-                className="heart"
-                id="imagem3"
-              ></img>
-            </button>
-            <button onClick={() => deletar(3)} className="Relogio">
-              <div className="re1">
-                <div className="re2"></div>
-                <div className="re3"></div>
-              </div>
-            </button>
+          <div className='Home'>
+            <ListaMusicas />
           </div>
         </div>
       </div>
