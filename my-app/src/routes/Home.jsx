@@ -62,7 +62,7 @@ function ListaMusicas() {
   }
 
   return (
-    <div>
+    <div className='ss'>
       {musicas.map((musica, index) => (
         <Musica
           key={musica.id}
@@ -161,7 +161,7 @@ const Home = () => {
 
           <hr className="linha"></hr>
 
-          <div className='Home'>
+          <div className='Homee'>
             <ListaMusicas />
           </div>
         </div>
