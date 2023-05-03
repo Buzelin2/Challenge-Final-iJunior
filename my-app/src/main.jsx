@@ -8,6 +8,8 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Artists from './routes/Artists'
 import ErrorPage from './routes/ErrorPage'
 import Home from './routes/Home'
+import Login from './routes/Login'
+import Cadastro from './routes/Cadastro'
 
 
 const router = createBrowserRouter([
@@ -18,6 +20,8 @@ const router = createBrowserRouter([
     children: [
       { path: '/home', element: <Home /> },
       { path: '/artists', element: <Artists /> },
+      { path: '/', element: <Login /> },
+      { path: '/cadastro', element: <Cadastro /> },
       
     ]
   },

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import "./Login.css";
+import "./Cadastro.css";
 
-const Login = () => {
+const Cadastro = () => {
     const [color, setcolor] = useState();
   
     return (
@@ -10,4 +10,4 @@ const Login = () => {
     );
   }
   
-  export default Login
+  export default Cadastro
