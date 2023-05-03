@@ -1,5 +1,6 @@
 import "./App.css";
 
+
 import LeftNavBar from "./components/LeftNavBar";
 
 import { Outlet } from 'react-router-dom'

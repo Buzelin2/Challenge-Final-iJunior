@@ -1,6 +1,11 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import "./Home.css";
+//import api from "/src/services/api";
+//import { apiSpotify } from '../services/api';
+//import { response } from '../../../api/Trainee-Spotify/api/config/express-config';
+
+
 
 
 function Musica(props) {
@@ -128,6 +133,14 @@ function mudarcor(num) {
     }
   }
 }
+
+ // apiSpotify.get ("/artists/0TnOYISbd1XYRBk9myaseg").then((response) => console.log(response.data));
+  //   .get("/api/users")
+  //   .then((response) => setUser(response.data))
+  //   .catch((err) => {
+  //     console.error("ops! ocorreu um erro" + err);
+  //   });
+
 
 const Home = () => {
   const [color, setcolor] = useState();

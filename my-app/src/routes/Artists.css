@@ -4,6 +4,7 @@
     font-family: "Inter";
     font-style: normal;
 }
+
 .artistas-main{
     background-color: rgb(21, 21, 21);
     width: 100%;
@@ -38,4 +39,19 @@
     margin-top: 14vw;
     margin-left: 1vw;
     color: rgb(191, 191, 191);
+}
+.img-artista{
+    width: 10vw;
+    height: 10vw;
+    margin-left: 1.5vw;
+    margin-top: 1vw;
+    border-radius: 50%;
+    position: absolute;
+}
+.nome-artista{
+    color: white;
+    margin-top: 12vw;
+    font-size: 1vw;
+    margin-left: 1vw;
+    position: absolute;
 }
