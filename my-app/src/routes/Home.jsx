@@ -1,9 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import "./Home.css";
-//import api from "/src/services/api";
-//import { apiSpotify } from '../services/api';
-//import { response } from '../../../api/Trainee-Spotify/api/config/express-config';
+
 
 
 

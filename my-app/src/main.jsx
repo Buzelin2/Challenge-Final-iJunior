@@ -9,14 +9,16 @@ import Artists from './routes/Artists'
 import ErrorPage from './routes/ErrorPage'
 import Home from './routes/Home'
 
+
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '/', element: <Home /> },
+      { path: '/home', element: <Home /> },
       { path: '/artists', element: <Artists /> },
+      
     ]
   },
 ]);

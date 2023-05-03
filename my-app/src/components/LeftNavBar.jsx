@@ -28,7 +28,7 @@ const LeftNavBar = () => {
           </p>
           <p>
             <img className="alo" src="img/Property 1=Default.png"></img>
-            <Link className="oi" to="/">Músicas Curtidas</Link>
+            <Link className="oi" to="/home">Músicas Curtidas</Link>
           </p>
         </div>
         <div className="logout">
