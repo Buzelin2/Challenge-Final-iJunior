@@ -9,6 +9,10 @@
     background-color: rgb(21, 21, 21);
     width: 100%;
 }
+.teste123{
+    display: flex;
+    width: 100%;
+}
 .div1{
     display: flex;
     margin-left: 5vw;

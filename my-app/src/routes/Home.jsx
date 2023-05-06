@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 import "./Home.css";
+import LeftNavBar from "./components/LeftNavBar";
 
 
 
@@ -65,7 +66,9 @@ function ListaMusicas() {
   }
 
   return (
+    
     <div className='ss'>
+      
       {musicas.map((musica, index) => (
         <Musica
           key={musica.id}
@@ -144,7 +147,9 @@ const Home = () => {
   const [color, setcolor] = useState();
 
   return (
+    
     <div className="Home">
+       <LeftNavBar />
 
       <div className="main">
         <div className="upper">

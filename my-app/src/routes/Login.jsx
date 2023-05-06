@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./Login.css";
 
+
 const Login = () => {
   
   
@@ -12,6 +13,7 @@ const Login = () => {
   
 
   const armazenarDados = () => {
+
       let aux = 0;
       const email1 = document.querySelector('#email');
       const senha1 = document.querySelector('#senha');
@@ -36,7 +38,9 @@ const Login = () => {
   
 
   return (
+    
     <div>
+      
       <h1>Inscrever-se em uma conta grátis do iSpotify ®</h1>
       <input
         type="text"
