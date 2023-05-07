@@ -1,0 +1,73 @@
+*{
+  /* border: 1px solid red; */
+  font-family: 'Inter';
+}
+body{
+  background-color: #1E1E1E;
+  text-align: center;
+}
+
+input{
+  display: flex;
+}
+
+h1{
+  color: #fff;
+  width: 22vw;
+  text-align: center;
+  margin: 2vw;
+}
+
+input{
+  padding-left: 0.5vw;
+  background-color: #3C3C3C;
+  margin: 1vw;
+  margin-bottom: 3vh;
+  width: 24vw;
+  height: 5vh;
+}
+
+.principal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-group{
+  position: relative;
+}
+
+.material-symbols-outlined{
+  position: absolute;
+  right: 1.5vw;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Material Icons';
+  color: #fff;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.Login{
+  width: 13vw;
+  height: 5vh;
+  border-radius: 2vw;
+  background-color: #fff;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 3vh;
+}
+
+.fazerLogin{
+  color: #fff;
+  font-size: 13px;
+}
+
+.fazerLogin a{
+  color: inherit;
+}
