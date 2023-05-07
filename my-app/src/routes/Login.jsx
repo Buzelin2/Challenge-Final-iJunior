@@ -56,6 +56,7 @@ const Login = () => {
           id="email"
         />
         <span class="material-symbols-outlined">mail</span>
+        
       </div>
       <div class="form-group">
         <input
