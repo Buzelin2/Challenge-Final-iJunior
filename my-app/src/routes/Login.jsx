@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -51,6 +51,7 @@ const Login = () => {
     } else {
       localStorage.setItem(emaill, senhaa);
       alert("Cadastro realizado com sucesso!");
+      navigate("/home");
       document.querySelector('#cadastroForm').reset();
     }
 

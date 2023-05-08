@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { redirect } from "react-router-dom";
 
 import "./Cadastro.css";
 
-import LeftNavBar from "./components/LeftNavBar";
+
 
 const Cadastro = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [varteste, setVarTeste] = useState(false);
 
   function validarCampos(campos) {
     for (let i = 0; i < campos.length; i++) {
@@ -39,7 +41,7 @@ const Cadastro = () => {
 
     if (storedSenha) {
       if (storedSenha === senha) {
-        alert("Sucesso!");
+        setVarTeste(true);
       } else {
         alert("Esta senha está inválida");
       }
@@ -68,7 +70,7 @@ const Cadastro = () => {
       <div class="principal">
         <h1>iSpotify ®<br /><br />Música para todos</h1>
 
-        <form class="cadastroForm">
+        <form class="cadastroForm" onSubmit="return false" action={varteste? "/home" : "/cadastro"}>
           <div className="form-group">
             <input
               type="text"

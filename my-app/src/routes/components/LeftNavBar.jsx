@@ -33,7 +33,7 @@ const LeftNavBar = () => {
         </div>
         <div className="logout">
           <p>
-            <span className="material-symbols-outlined alo">logout</span>
+            <span className="material-symbols-outlined teste9 alo">logout</span>
             <span className="oi">Logout</span>
           </p>
         </div>

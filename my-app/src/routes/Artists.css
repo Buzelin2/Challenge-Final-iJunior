@@ -41,13 +41,13 @@
 .art-text{
     font-size: 0.9vw;
     margin-top: 14vw;
-    margin-left: 1vw;
+    margin-left: -8vw;
     color: rgb(191, 191, 191);
 }
 .img-artista{
     width: 10vw;
     height: 10vw;
-    margin-left: 1.5vw;
+    margin-left: -5vw;
     margin-top: 1vw;
     border-radius: 50%;
     position: absolute;
