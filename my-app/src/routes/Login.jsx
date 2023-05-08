@@ -25,12 +25,13 @@ const Login = () => {
 
 
 
-  const armazenarDados = () => {
+const armazenarDados = () => {
     const email1 = document.querySelector('#email');
     const senha1 = document.querySelector('#senha');
     const emaill = email1.value;
     const senhaa = senha1.value;
-
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let aux = 0;
     const campos = [
       { id: 'email', value: email },
       { id: 'senha', value: senha },
@@ -45,35 +46,26 @@ const Login = () => {
     if (!validarCampos(campos)) {
       return;
     }
-
-    if (localStorage.getItem(emaill)) {
-      alert("Este email já foi cadastrado.");
-    } else {
-      localStorage.setItem(emaill, senhaa);
-      alert("Cadastro realizado com sucesso!");
-      navigate("/home");
-      document.querySelector('#cadastroForm').reset();
+    if (!emailRegex.test(emaill)) {
+    alert('Por favor, insira um endereço de email válido.');
+    return;
     }
+     
+    for (var i = 0; i < localStorage.length; i++) {
+       if (emaill === localStorage.key(i)) {
+        aux++;
+       }
+      
+     }
+     if (aux === 1) {
+     alert("este email ja foi cadastrado")
 
-    // let aux = 0;
-    // const email1 = document.querySelector('#email');
-    // const senha1 = document.querySelector('#senha');
-    // const emaill = email1.value;
-    // const senhaa = senha1.value;
+     } 
+     else {
+        localStorage.setItem(emaill, senhaa);
+      }
+      };
 
-    // for (var i = 0; i < localStorage.length; i++) {
-    //   if (emaill == localStorage.key(i)) {
-    //     aux++;
-    //   }
-    // }
-    // if (aux === 1) {
-    //   alert("este email ja foi cadastrado")
-
-    // } else {
-    //   localStorage.setItem(emaill, senhaa);
-
-    // }
-  };
 
 
 
