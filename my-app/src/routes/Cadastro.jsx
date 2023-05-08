@@ -22,12 +22,13 @@ const Cadastro = () => {
     return true;
   }
 
-  function verificar() {
+ function verificar() {
     const campos = [
       { id: 'email', value: email },
       { id: 'senha', value: senha },
     ];
-
+    
+     
     if (!email && !senha) {
       alert('Por favor, preencha todos os campos.');
       return;
@@ -36,31 +37,25 @@ const Cadastro = () => {
     if (!validarCampos(campos)) {
       return;
     }
+    
 
-    const storedSenha = localStorage.getItem(email);
-
-    if (storedSenha) {
-      if (storedSenha === senha) {
-        setVarTeste(true);
-      } else {
-        alert("Esta senha está inválida");
-      }
-    } else {
-      alert("Email não cadastrado.");      
-    }
-
-    document.querySelector('#cadastroForm').reset();
-
-    // for (var i = 0; i < localStorage.length; i++) {
-    //   if (email === localStorage.key(i)) {
-    //     const senha1 = localStorage.getItem(email);
-    //     if (senha1 === senha) {
-    //       alert("logado");
-    //     } else {
-    //       alert("Esta senha está inválida");
-    //     }
-    //   }
-    // }
+let aux1 = 0;
+    for (var i = 0; i < localStorage.length; i++) {;
+       if (email === localStorage.key(i)) {
+         const senha1 = localStorage.getItem(email);
+           if (senha1 === senha) {
+             alert("logado");
+               aux1 = 1;
+         } else {
+          alert("Esta senha está inválida");
+          aux1 = 1;
+         }
+       }
+      
+     }
+     if (aux1 === 0){
+     alert("este email não foi cadastrado");
+     }
   }
 
   return (
