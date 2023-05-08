@@ -44,7 +44,7 @@ let aux1 = 0;
        if (email === localStorage.key(i)) {
          const senha1 = localStorage.getItem(email);
            if (senha1 === senha) {
-             alert("logado");
+               setVarTeste(true);
                aux1 = 1;
          } else {
           alert("Esta senha está inválida");
