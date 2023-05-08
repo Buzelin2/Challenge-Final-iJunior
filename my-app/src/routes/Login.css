@@ -61,6 +61,7 @@ input{
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 3vh;
+  cursor: pointer;
 }
 
 .fazerLogin{
@@ -71,3 +72,5 @@ input{
 .fazerLogin a{
   color: inherit;
 }
+
+

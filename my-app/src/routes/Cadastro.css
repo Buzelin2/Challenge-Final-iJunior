@@ -61,13 +61,14 @@ input{
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 3vh;
+  cursor: pointer;
 }
 
-.fazerLogin{
+.inscrever{
   color: #fff;
   font-size: 13px;
 }
 
-.fazerLogin a{
+.inscrever a{
   color: inherit;
 }
