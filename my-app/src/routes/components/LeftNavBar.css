@@ -1,41 +1,50 @@
 .esquerda {
-  height: 126vh;
+  height: 130vh;
   width: 14vw;
   background-color: black;
 }
 
-.esquerda a{
+.esquerda a {
   text-decoration: none;
-  color: #CCCCCC;
+  color: #cccccc;
+}
+
+.artistas-musicas p {
+  width: 50;
 }
 
 .esquerda-box {
   display: flex;
   flex-direction: column;
-  padding: 3vw;
+  padding: 2.2vw;
   height: 50vw;
 }
 
-.alo2{
+.ispot{
+  font-size: 1.5vw;
+}
+
+.alo2 {
   width: 2.7vw;
   margin-left: -1vw;
   margin-right: 0.5vw;
 }
 
-.alo{
+.alo {
   margin-top: 0vw;
-  width: 4vw;
+  width: 2vw;
   margin-right: 0.3vw;
 }
 
-.oi{
-  font-size: 1vw;
+.oi {
+  font-size: 0.9vw;
+  width: 100%;
 }
 
-.logout{
-  margin-top: auto;
+.logout {
+  margin-top: 80vh;
 }
-.teste9{
+.teste9 {
   margin-top: 29.4vw;
   margin-right: 91.2vw;
 }

@@ -10,20 +10,21 @@ import ErrorPage from './routes/ErrorPage'
 import Home from './routes/Home'
 import Login from './routes/Login'
 import Cadastro from './routes/Cadastro'
+import Account from './routes/Account'
 
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '/home', element: <Home /> },
-      { path: '/artists', element: <Artists /> },
-      { path: '/', element: <Login /> },
-      { path: '/cadastro', element: <Cadastro /> },
-      
-    ]
+      { path: "/home", element: <Home /> },
+      { path: "/artists", element: <Artists /> },
+      { path: "/", element: <Login /> },
+      { path: "/cadastro", element: <Cadastro /> },
+      { path: "/conta", element: <Account /> },
+    ],
   },
 ]);
 
