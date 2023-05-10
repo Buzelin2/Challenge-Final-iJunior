@@ -37,7 +37,7 @@ const LeftNavBar = () => {
         <div className="logout">
           <p>
             <img src="img/logout.svg"></img>
-            <span className="oi">Logout</span>
+            <Link className="oi" to="/">Logout</Link>
           </p>
         </div>
       </div>

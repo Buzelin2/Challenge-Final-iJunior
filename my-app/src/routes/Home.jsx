@@ -153,27 +153,25 @@ const Home = () => {
 
       <div className="main">
         <div className="upper">
-          <img className="album" src="img/\81TnWHafWdL._AC_SL1448_.jpg"></img>
+          <img className="album" src="img\image 4.png"></img>
           <div className="textos">
             <p className="playlist">Playlist</p>
-            <p className="daily">Daily Mix 1</p>
-            <p className="texto3">Red Hot Chili Peppers, Coldplay e mais</p>
-            <p className="texto3">Spotify - 50 músicas 1h 7min</p>
+            <p className="daily">Musicas Curtidas</p>
           </div>
         </div>
 
         <div className="icons-top">
           <img src="img/icons8-circled-play-65.png" alt="" className="play" />
           <img src="img/Property 1=Default.png" alt="" className="heart" />
-          <img src="img/download-icon-down-arrow-23.png" id="download"></img>
+          <img src="img\download-icon-white-21.jpg" id="download"></img>
 
           <img src="img/icons8-ellipsis-35.png" alt="" className="three-dots" />
         </div>
 
         <div className="cabeçalhoMusica">
           <span className="titulo">#TITULO</span>
-          <span className="alb">ÁLBUM</span>
-          <span className="relogio">REL</span>
+          <span className="alb">Gênero</span>
+         
 
           <hr className="linha"></hr>
 
