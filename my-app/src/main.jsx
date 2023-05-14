@@ -10,6 +10,7 @@ import ErrorPage from './routes/ErrorPage'
 import Home from './routes/Home'
 import Login from './routes/Login'
 import Cadastro from './routes/Cadastro'
+import InfoArtista from './routes/InfoArtista'
 import Account from './routes/Account'
 
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Login /> },
       { path: "/cadastro", element: <Cadastro /> },
       { path: "/conta", element: <Account /> },
+      {path: "/infoartista", element: <InfoArtista />}
     ],
   },
 ]);
