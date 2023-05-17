@@ -60,9 +60,11 @@
     }
     
     .nome-artista {
+    display: flex;
+    margin-left: .85rem;
     color: white;
     margin-top: 12vw;
     font-size: 1vw;
-    margin-left: 1vw;
+    text-decoration: none;
     position: absolute;
     }
