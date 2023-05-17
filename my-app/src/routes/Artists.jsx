@@ -65,7 +65,7 @@ const Artists = () => {
                 src={artist.image}
                 alt={artist.name}
               />
-              <Link className="nome-artista" to={`/infoartista/${artist.name}`}>
+              <Link className="nome-artista" to={`/infoartista/${artist.id}`}>
                 {artist.name}
               </Link>
               <p className="art-text">Artista</p>
@@ -85,7 +85,7 @@ const Artists = () => {
                 src={artist.image}
                 alt={artist.name}
               />
-              <Link className="nome-artista" to={`/infoartista/${artist.name}`}>
+              <Link className="nome-artista" to={`/infoartista/${artist.id}`}>
                 {artist.name}
               </Link>
               <p className="art-text">Artista</p>

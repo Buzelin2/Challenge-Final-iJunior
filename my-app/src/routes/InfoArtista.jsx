@@ -3,44 +3,13 @@ import { useEffect, useState } from "react";
 import "./InfoArtista.css";
 import LeftNavBar from "./components/LeftNavBar";
 import { apiSpotify } from "../services/api";
+import { useParams } from 'react-router-dom';
 
 
 function Musica(props) {
+  const {id} = useParams()
+
   const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
-
-  useEffect(() => {
-    const fetchArtists = async () => {
-      const artistIds = [
-        "06HL4z0CvFAxyc27GXpf02",
-        "0i1s9WcIu0PrUvHzALgofo",
-        "1b8kpp4DUwt1hWaxTiWQhD",
-        "10naVTwNjE50daQVrN0bXh",
-        "3PhoLpVuITZKcymswpck5b",
-        "4C4kpaAdp6aKSkguw40SsU",
-        "6tOsSffQQIXmK8TqsDck8t",
-        "5JYtpnUKxAzXfHEYpOeeit",
-        "1dfeR4HaWDbWqFHLkxsg1d",
-        "0du5cEVh5yTK9QJze8zA0C",
-      ];
-
-      const artistsWithTopTracks = await Promise.all(
-        artistIds.map(async (id) => {
-          const artist = await apiSpotify.get(`/artists/${id}`);
-          const topTracks = await getTopTracks(id);
-          return {
-            id: artist.data.id,
-            name: artist.data.name,
-            image: artist.data.images[0].url,
-            topTracks: topTracks,
-          };
-        })
-      );
-
-      setArtists(artistsWithTopTracks);
-    };
-
-    fetchArtists();
-  }, []);
 
   function handleClickFavorita() {
     onToggleFavorita();
@@ -71,10 +40,22 @@ function Musica(props) {
 }
 
 function ListaMusicas() {
-  const [ musicas, setMusicas] = useState([
-    { id: 1, nome: "The Zephyr Song", artista: "Red Hot Chili Pepers", album: "By The Way", favorita: false },
+  const [musicas, setMusicas] = useState([
+    {
+      id: 1,
+      nome: "The Zephyr Song",
+      artista: "Red Hot Chili Pepers",
+      album: "By The Way",
+      favorita: false,
+    },
     { id: 2, nome: "Talk", artista: "Coldplay", album: "X&Y", favorita: false },
-    { id: 3, nome: "Firmamento", artista: "Cidade Negra", album: "Cidade Negra Acústico MTV", favorita: false }
+    {
+      id: 3,
+      nome: "Firmamento",
+      artista: "Cidade Negra",
+      album: "Cidade Negra Acústico MTV",
+      favorita: false,
+    },
   ]);
 
   const [imagemFavorita, setImagemFavorita] = useState("img/Property 1=Default.png");
