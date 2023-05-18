@@ -1,7 +1,8 @@
-import React from 'react'
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 import "./InfoArtista.css";
 import LeftNavBar from "./components/LeftNavBar";
+import { apiSpotify } from '../services/api';
+
 
 
 
@@ -40,7 +41,16 @@ function Musica(props) {
 
 function ListaMusicas() {
   const [musicas, setMusicas] = useState([
-    { id: 1, nome: "The Zephyr Song", artista: "Red Hot Chili Pepers", album: "By The Way", favorita: false },
+    /* {artists.map((artist) => (
+            <div className='' key={artist.id}>
+               <ul>
+                {artist.topTracks.slice(0, 5).map((track) => (
+                  <li key={track.id}>{track.name}</li>
+                ))}
+              </ul> 
+            </div>
+        ))} */
+    { id: 1, nome: "a", artista: "artist.data.name", album: "By The Way", favorita: false },
     { id: 2, nome: "Talk", artista: "Coldplay", album: "X&Y", favorita: false },
     { id: 3, nome: "Firmamento", artista: "Cidade Negra", album: "Cidade Negra Acústico MTV", favorita: false }
   ]);
@@ -152,18 +162,65 @@ function mudarcor(num) {
 
 
 const InfoArtista = () => {
+  const [artists, setArtists] = useState([]);
+
+  const getTopTracks = async (id) => {
+    try {
+      const response = await apiSpotify.get(`/artists/${id}/top-tracks?market=US`);
+      return response.data.tracks;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    const fetchArtists = async () => {
+      const artistIds = [
+        '06HL4z0CvFAxyc27GXpf02',
+        '0i1s9WcIu0PrUvHzALgofo',
+        '1b8kpp4DUwt1hWaxTiWQhD',
+        '10naVTwNjE50daQVrN0bXh',
+        '3PhoLpVuITZKcymswpck5b',
+        '4C4kpaAdp6aKSkguw40SsU',
+        '6tOsSffQQIXmK8TqsDck8t',
+        '5JYtpnUKxAzXfHEYpOeeit',
+        '1dfeR4HaWDbWqFHLkxsg1d',
+        '0du5cEVh5yTK9QJze8zA0C',
+      ];
+
+      const artistsWithTopTracks = await Promise.all(
+        artistIds.map(async (id) => {
+          const artist = await apiSpotify.get(`/artists/${id}`);
+          const topTracks = await getTopTracks(id);
+          return {
+            id: artist.data.id,
+            name: artist.data.name,
+            image: artist.data.images[0].url,
+            topTracks: topTracks,
+          };
+        })
+      );
+
+      setArtists(artistsWithTopTracks);
+    };
+
+    fetchArtists();
+  }, []);
   const [color, setcolor] = useState();
 
   return (
 
     <div className="Home">
       <LeftNavBar />
-
+    
       <div className="mainn">
         <div className="upper">
           <img className="album" src="img\image 4.png"></img>
           <div className="textos">
             <p className="playlist">Astista</p>
+            <div className='div2'>
+          
+        </div>
             <p className="daily">Musicas Curtidas</p>
           </div>
         </div>
@@ -172,10 +229,8 @@ const InfoArtista = () => {
           <img src="img/icons8-circled-play-65.png" alt="" className="play" />
           <img src="img/Property 1=Default.png" alt="" className="heart" />
           <img src="img\download-icon-white-21.jpg" id="download"></img>
-
           <img src="img/icons8-ellipsis-35.png" alt="" className="three-dots" />
         </div>
-
         <div className="cabeçalhoMusica">
           <span className="titulo">#TITULO</span>
           <span className="alb">Gênero</span>
