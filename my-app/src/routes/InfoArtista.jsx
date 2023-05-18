@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import "./InfoArtista.css";
 import LeftNavBar from "./components/LeftNavBar";
-import { apiSpotify } from '../services/api';
-
-
-
-
+import { apiSpotify } from "../services/api";
+import { useParams } from 'react-router-dom';
 
 
 function Musica(props) {
+  const {id} = useParams()
+
   const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
 
   function handleClickFavorita() {
@@ -41,18 +40,21 @@ function Musica(props) {
 
 function ListaMusicas() {
   const [musicas, setMusicas] = useState([
-    /* {artists.map((artist) => (
-            <div className='' key={artist.id}>
-               <ul>
-                {artist.topTracks.slice(0, 5).map((track) => (
-                  <li key={track.id}>{track.name}</li>
-                ))}
-              </ul> 
-            </div>
-        ))} */
-    { id: 1, nome: "a", artista: "artist.data.name", album: "By The Way", favorita: false },
+    {
+      id: 1,
+      nome: "The Zephyr Song",
+      artista: "Red Hot Chili Pepers",
+      album: "By The Way",
+      favorita: false,
+    },
     { id: 2, nome: "Talk", artista: "Coldplay", album: "X&Y", favorita: false },
-    { id: 3, nome: "Firmamento", artista: "Cidade Negra", album: "Cidade Negra Acústico MTV", favorita: false }
+    {
+      id: 3,
+      nome: "Firmamento",
+      artista: "Cidade Negra",
+      album: "Cidade Negra Acústico MTV",
+      favorita: false,
+    },
   ]);
 
   const [imagemFavorita, setImagemFavorita] = useState("img/Property 1=Default.png");
