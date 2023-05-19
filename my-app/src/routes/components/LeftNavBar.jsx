@@ -14,20 +14,20 @@ const LeftNavBar = () => {
         <h1 className="ispot">iSpotify ®</h1>
         <div className="artistas-musicas">
           <p className="alo3">
-            <img className="alo" src="img\album.svg"></img>
+            <img className="alo" src="/img\album.svg"></img>
             <Link className="oi" to="/artists">
               Artistas
             </Link>
           </p>
           <p>
-            <img className="alo" src="img/favorite.svg"></img>
+            <img className="alo" src="/img/favorite.svg"></img>
             <Link className="oi" to="/home">
               Músicas Curtidas
             </Link>
           </p>
           <div className="minha-conta">
             <p className="alo3">
-              <img className="alo" src="img/account.png"></img>
+              <img className="alo" src="/img/account.png"></img>
               <Link className="oi" to="/conta">
                 Minha Conta
               </Link>
@@ -36,7 +36,7 @@ const LeftNavBar = () => {
         </div>
         <div className="logout">
           <p>
-            <img src="img/logout.svg"></img>
+            <img src="/img/logout.svg"></img>
             <Link className="oi" to="/">Logout</Link>
           </p>
         </div>

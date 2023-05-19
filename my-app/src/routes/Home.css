@@ -1,6 +1,7 @@
 .Home {
   display: flex;
-  height: 130vh;
+  height: 100%;
+  background-color: black;
 }
 .main{
   width: 84.91vw;

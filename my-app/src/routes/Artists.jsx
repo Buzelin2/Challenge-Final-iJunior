@@ -4,6 +4,8 @@ import { apiSpotify } from "../services/api";
 import LeftNavBar from "./components/LeftNavBar";
 import { Link } from "react-router-dom";
 
+// const [teste, setTeste] = useState("");
+
 const Artists = () => {
   const [artists, setArtists] = useState([]);
 
@@ -22,14 +24,14 @@ const Artists = () => {
     const fetchArtists = async () => {
       const artistIds = [
         "06HL4z0CvFAxyc27GXpf02",
-        "0i1s9WcIu0PrUvHzALgofo",
+        "6olE6TJLqED3rqDCT0FyPh",
         "1b8kpp4DUwt1hWaxTiWQhD",
         "10naVTwNjE50daQVrN0bXh",
-        "3PhoLpVuITZKcymswpck5b",
+        "0k17h0D3J5VfsdmQ1iZtE9",
         "4C4kpaAdp6aKSkguw40SsU",
         "6tOsSffQQIXmK8TqsDck8t",
-        "5JYtpnUKxAzXfHEYpOeeit",
-        "1dfeR4HaWDbWqFHLkxsg1d",
+        "7dnT2FUXhjirperXaH22IJ",
+        "4LLpKhyESsyAXpc4laK94U",
         "0du5cEVh5yTK9QJze8zA0C",
       ];
 
@@ -86,6 +88,7 @@ const Artists = () => {
                 alt={artist.name}
               />
               <Link className="nome-artista" to={`/infoartista/${artist.id}`}>
+                
                 {artist.name}
               </Link>
               <p className="art-text">Artista</p>

@@ -170,7 +170,7 @@ const Home = () => {
 
         <div className="cabeçalhoMusica">
           <span className="titulo">#TITULO</span>
-          <span className="alb">Gênero</span>
+          <span className="alb">Album</span>
          
 
           <hr className="linha"></hr>

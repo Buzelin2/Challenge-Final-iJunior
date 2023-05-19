@@ -5,10 +5,11 @@ import { apiSpotify } from "../services/api";
 import { useParams } from 'react-router-dom';
 
 
-function Musica(props) {
-  const {id} = useParams()
 
-  const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
+function Musica(props) {
+  
+
+  const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita, genero } = props;
 
   function handleClickFavorita() {
     onToggleFavorita();
@@ -38,88 +39,6 @@ function Musica(props) {
   );
 }
 
-function ListaMusicas() {
-  const [musicas, setMusicas] = useState([
-    {
-      id: 1,
-      nome: "The Zephyr Song",
-      artista: "Red Hot Chili Pepers",
-      album: "By The Way",
-      favorita: false,
-    },
-    { id: 2, nome: "Talk", artista: "Coldplay", album: "X&Y", favorita: false },
-    {
-      id: 3,
-      nome: "Firmamento",
-      artista: "Cidade Negra",
-      album: "Cidade Negra Acústico MTV",
-      favorita: false,
-    },
-  ]);
-
-  const [imagemFavorita, setImagemFavorita] = useState("img/Property 1=Default.png");
-
-  function deletar(index) {
-    const novasMusicas = [...musicas];
-    novasMusicas.splice(index, 1);
-    setMusicas(novasMusicas);
-  }
-
-  function mudarcor(index) {
-    const novasMusicas = [...musicas];
-    novasMusicas[index].favorita = !novasMusicas[index].favorita;
-    setMusicas(novasMusicas);
-  
-    const imagemFavorita = "img/Property 1=Variant2.png";
-    const imagemPadrao = "img/Property 1=Default.png";
-    const isFavorita = novasMusicas[index].favorita;
-  
-    // Usando o identificador único para atualizar apenas o ícone correspondente
-    const iconId = `#imagem${index}`;
-    const icon = document.querySelector(iconId);
-  
-    if (isFavorita) {
-      icon.src = imagemFavorita;
-    } else {
-      icon.src = imagemPadrao;
-    }
-  }
-
-  return (
-
-    <div className='ss'>
-
-      {musicas.map((musica, index) => (
-        <Musica
-          key={musica.id}
-          index={index}
-          nome={musica.nome}
-          artista={musica.artista}
-          album={musica.album}
-          favorita={musica.favorita}
-          imagemFavorita={imagemFavorita}
-          onDelete={() => deletar(index)}
-          onToggleFavorita={() => mudarcor(index)}
-        />
-      ))}
-    </div>
-  );
-}
-
-function deletar(dnum) {
-  if (dnum === 1) {
-    const meum = document.querySelector("#ms0");
-    meum.style.display = "none";
-  }
-  if (dnum === 2) {
-    const medo = document.querySelector("#ms1");
-    medo.style.display = "none";
-  }
-  if (dnum === 3) {
-    const metr = document.querySelector("#ms2");
-    metr.style.display = "none";
-  }
-}
 function mudarcor(num) {
   const imgcv = "img/Property 1=Variant2.png";
   const imgc = "img/Property 1=Default.png";
@@ -155,12 +74,7 @@ function mudarcor(num) {
   }
 }
 
-// apiSpotify.get ("/artists/0TnOYISbd1XYRBk9myaseg").then((response) => console.log(response.data));
-//   .get("/api/users")
-//   .then((response) => setUser(response.data))
-//   .catch((err) => {
-//     console.error("ops! ocorreu um erro" + err);
-//   });
+
 
 
 const InfoArtista = () => {
@@ -179,14 +93,14 @@ const InfoArtista = () => {
     const fetchArtists = async () => {
       const artistIds = [
         '06HL4z0CvFAxyc27GXpf02',
-        '0i1s9WcIu0PrUvHzALgofo',
+        '6olE6TJLqED3rqDCT0FyPh',
         '1b8kpp4DUwt1hWaxTiWQhD',
         '10naVTwNjE50daQVrN0bXh',
-        '3PhoLpVuITZKcymswpck5b',
+        '0k17h0D3J5VfsdmQ1iZtE9',
         '4C4kpaAdp6aKSkguw40SsU',
         '6tOsSffQQIXmK8TqsDck8t',
-        '5JYtpnUKxAzXfHEYpOeeit',
-        '1dfeR4HaWDbWqFHLkxsg1d',
+        '7dnT2FUXhjirperXaH22IJ',
+        '4LLpKhyESsyAXpc4laK94U',
         '0du5cEVh5yTK9QJze8zA0C',
       ];
 
@@ -208,43 +122,73 @@ const InfoArtista = () => {
 
     fetchArtists();
   }, []);
-  const [color, setcolor] = useState();
-
+  const {id} = useParams()
+  function return_index(){
+  
+    if (id == '06HL4z0CvFAxyc27GXpf02') return 0;
+    if (id == '6olE6TJLqED3rqDCT0FyPh') return 1;
+    if (id == '1b8kpp4DUwt1hWaxTiWQhD') return 2;
+    if (id == '10naVTwNjE50daQVrN0bXh') return 3;
+    if (id == '0k17h0D3J5VfsdmQ1iZtE9') return 4;
+    if (id == '4C4kpaAdp6aKSkguw40SsU') return 5;
+    if (id == '6tOsSffQQIXmK8TqsDck8t') return 6;
+    if (id == '7dnT2FUXhjirperXaH22IJ') return 7;
+    if (id == '4LLpKhyESsyAXpc4laK94U') return 8;
+    if (id == '0du5cEVh5yTK9QJze8zA0C') return 9;
+    
+  }
+  
   return (
-
+    
     <div className="Home">
       <LeftNavBar />
-    
+      {artists.slice(return_index(), return_index() + 1).map((artist) => (
       <div className="mainn">
         <div className="upper">
-          <img className="album" src="img\image 4.png"></img>
+          <img className="album" src={artist.image}></img>
           <div className="textos">
-            <p className="playlist">Astista</p>
+            <p className="playlist">Artista</p>
             <div className='div2'>
           
         </div>
-            <p className="daily">Musicas Curtidas</p>
+            <p className="daily">{artist.name}</p>
           </div>
         </div>
 
         <div className="icons-top">
-          <img src="img/icons8-circled-play-65.png" alt="" className="play" />
-          <img src="img/Property 1=Default.png" alt="" className="heart" />
-          <img src="img\download-icon-white-21.jpg" id="download"></img>
-          <img src="img/icons8-ellipsis-35.png" alt="" className="three-dots" />
+          <img src="/img/icons8-circled-play-65.png" alt="" className="play" />
+          <img src="/img/Property 1=Default.png" alt="" className="heart heartt" />
+          <img src="/img/download-icon-white-21.jpg" id="download"></img>
+          <img src="/img/icons8-ellipsis-35.png" alt="" className="three-dots" />
         </div>
         <div className="cabeçalhoMusica">
           <span className="titulo">#TITULO</span>
-          <span className="alb">Gênero</span>
-
-
+          <span className="alb">Album</span>
+          
+                
+              
+           
+          
+        
+          
           <hr className="linha"></hr>
 
-          <div className='Homee'>
-            <ListaMusicas />
-          </div>
+          {artist.topTracks.slice(0, 5).map((track, index) => (
+  <div className="musica" id={`ms${index}`} key={track.id}>
+    <div className="Musica">
+      <p className='trackname'>{track.name}</p>
+      <p className='artistname'>{artist.name}</p>
+    </div>
+    <span className="Album albumname">{track.album.name}</span>
+    <button onClick={() => mudarcor(index + 1)} className="coraçao" id={`cr${index + 1}`}>
+      <img src="/img/Property 1=Default.png"></img>
+    </button>
+
+  </div>
+))}
         </div>
       </div>
+      ))}
     </div>
   );
 }
