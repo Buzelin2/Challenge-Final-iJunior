@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import "./InfoArtista.css";
 import LeftNavBar from "./components/LeftNavBar";
 import { apiSpotify } from "../services/api";
@@ -57,14 +57,47 @@ import { useParams } from 'react-router-dom';
 
 
 const InfoArtista = () => {
+  const {id} = useParams()
   const [artists, setArtists] = useState([]);
-  const [heartColors, setHeartColors] = useState(Array(10).fill(false));
+  const [heartColors, setHeartColors] = useState(() => {
+    const savedHeartColors = Array(10).fill(false); // Array inicial com valores falsos
+    for (let i = 0; i < 10; i++) {
+      const savedColor = localStorage.getItem(`heartColor_${id}_${i}`);
+      if (savedColor !== null) {
+        savedHeartColors[i] = JSON.parse(savedColor);
+      }
+    }
+    return savedHeartColors;
+  });
+  const [likedTracks, setLikedTracks] = useState([]);
+
+  
 
   function handleClickHeart(index) {
     setHeartColors((prevColors) => {
       const newColors = [...prevColors];
       newColors[index] = !newColors[index];
+
+      localStorage.setItem(`heartColor_${id}_${index}`, !heartColors[index]);
       return newColors;
+    });
+
+    setLikedTracks((prevTracks) => {
+      const newTracks = [...prevTracks];
+      const track = artists[return_index()].topTracks[index];
+
+      if (newTracks.includes(track)) {
+        // Se a música já estiver curtida, remove do array
+        const indexToRemove = newTracks.findIndex((t) => t.id === track.id);
+        newTracks.splice(indexToRemove, 1);
+      } else {
+        // Se a música não estiver curtida, adiciona ao array
+        newTracks.push(track);
+      }
+
+      // console.log(newTracks)
+
+      return newTracks;
     });
   }
 
@@ -110,7 +143,7 @@ const InfoArtista = () => {
 
     fetchArtists();
   }, []);
-  const {id} = useParams()
+  
   function return_index(){
   
     if (id == '06HL4z0CvFAxyc27GXpf02') return 0;
@@ -180,5 +213,7 @@ const InfoArtista = () => {
     </div>
   );
 }
+
+
 
 export default InfoArtista
