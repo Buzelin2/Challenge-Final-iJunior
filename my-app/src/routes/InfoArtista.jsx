@@ -6,79 +6,67 @@ import { useParams } from 'react-router-dom';
 
 
 
-function Musica(props) {
+// function Musica(props) {
   
 
-  const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita, genero } = props;
+//   const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita, genero } = props;
 
-  function handleClickFavorita() {
-    onToggleFavorita();
-  }
+//   function handleClickFavorita() {
+//     onToggleFavorita();
+//   }
 
-  function handleClickDeletar() {
-    onDelete();
-  }
-  return (
-    <div className="musica" id={`ms${index}`}>
-      <span className="numMusica">{index + 1}</span>
-      <div className="Musica">
-        <p>{nome}</p>
-        <p>{artista}</p>
-      </div>
-      <span className="Album">{album}</span>
-      <button onClick={() => handleClickFavorita(index)} className="coraçao" id={`cr${index}`}>
-        <img src={favorita ? imagemFavorita : "img/Property 1=Default.png"} className="heartt" id={`imagem${index}`} />
-      </button>
-      <button onClick={handleClickDeletar} className="Relogio">
-        <div className="rel1">
-          <div className="rel2"></div>
-          <div className="rel3"></div>
-        </div>
-      </button>
-    </div>
-  );
-}
+//   function handleClickDeletar() {
+//     onDelete();
+//   }
+//   return (
+//     <div className="musica" id={`ms${index}`}>
+//       <span className="numMusica">{index + 1}</span>
+//       <div className="Musica">
+//         <p>{nome}</p>
+//         <p>{artista}</p>
+//       </div>
+//       <span className="Album">{album}</span>
+//       <button onClick={() => handleClickFavorita(index)} className="coraçao" id={`cr${index}`}>
+//         <img src={favorita ? imagemFavorita : "img/Property 1=Default.png"} className="heartt" id={`imagem${index}`} />
+//       </button>
+//       <button onClick={handleClickDeletar} className="Relogio">
+//         <div className="rel1">
+//           <div className="rel2"></div>
+//           <div className="rel3"></div>
+//         </div>
+//       </button>
+//     </div>
+//   );
+// }
 
-function mudarcor(num) {
-  const imgcv = "img/Property 1=Variant2.png";
-  const imgc = "img/Property 1=Default.png";
-  if (num === 1) {
-    const meubotao = document.querySelector("#cr1");
-    const imagen1 = meubotao.querySelector("#imagem1");
+// // function mudarcor(num) {
+// //   const imgcv = "img/Property 1=Variant2.png";
+// //   const imgc = "img/Property 1=Default.png";
 
-    if (imagen1.getAttribute("src") === "img/Property 1=Default.png") {
-      imagen1.setAttribute("src", imgcv);
-    } else {
-      imagen1.setAttribute("src", imgc);
-    }
-  }
+// //   const meubotao = document.querySelector(`#cr${num}`);
+// //   const imagen1 = meubotao.querySelector(`#imagem${num}`);
 
-  if (num === 2) {
-    const meubotao = document.querySelector("#cr2");
-    const imagen1 = meubotao.querySelector("#imagem2");
-    if (imagen1.getAttribute("src") === "img/Property 1=Default.png") {
-      imagen1.setAttribute("src", imgcv);
-    } else {
-      imagen1.setAttribute("src", imgc);
-    }
-  }
-
-  if (num === 3) {
-    const meubotao = document.querySelector("#cr3");
-    const imagen1 = meubotao.querySelector("#imagem3");
-    if (imagen1.getAttribute("src") === "img/Property 1=Default.png") {
-      imagen1.setAttribute("src", imgcv);
-    } else {
-      imagen1.setAttribute("src", imgc);
-    }
-  }
-}
+// //   if (imagen1.getAttribute("src") === "img/Property 1=Default.png") {
+// //     imagen1.setAttribute("src", imgcv);
+// //   } else {
+// //     imagen1.setAttribute("src", imgc);
+// //   }
+// // }
 
 
 
 
 const InfoArtista = () => {
   const [artists, setArtists] = useState([]);
+  const [heartColors, setHeartColors] = useState(Array(10).fill(false));
+
+  function handleClickHeart(index) {
+    setHeartColors((prevColors) => {
+      const newColors = [...prevColors];
+      newColors[index] = !newColors[index];
+      return newColors;
+    });
+  }
 
   const getTopTracks = async (id) => {
     try {
@@ -180,9 +168,9 @@ const InfoArtista = () => {
       <p className='artistname'>{artist.name}</p>
     </div>
     <span className="Album albumname">{track.album.name}</span>
-    <button onClick={() => mudarcor(index + 1)} className="coraçao" id={`cr${index + 1}`}>
-      <img src="/img/Property 1=Default.png"></img>
-    </button>
+    <button onClick={() => handleClickHeart(index)} className="coraçao" id={`cr${index + 1}`}>
+            <img src={heartColors[index] ? "/img/Property 1=Variant2.png" : "/img/Property 1=Default.png"} alt="coração"></img>
+          </button>
 
   </div>
 ))}
