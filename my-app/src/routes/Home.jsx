@@ -10,7 +10,8 @@ import LeftNavBar from "./components/LeftNavBar";
 
 
 function Musica(props) {
-  const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
+  const { index, track, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
+  const { name, artists, album } = track;
 
   function handleClickFavorita() {
     onToggleFavorita();
@@ -19,14 +20,15 @@ function Musica(props) {
   function handleClickDeletar() {
     onDelete();
   }
+
   return (
     <div className="musica" id={`ms${index}`}>
       <span className="numMusica">{index + 1}</span>
       <div className="Musica">
-        <p>{nome}</p>
-        <p>{artista}</p>
+        <p>{name}</p>
+        <p>{artists[0].name}</p>
       </div>
-      <span className="Album">{album}</span>
+      <span className="Album">{album.name}</span>
       <button onClick={handleClickFavorita} className="coraçao" id={`cr${index}`}>
         <img src={favorita ? imagemFavorita : "img/Property 1=Default.png"} className="heart" id={`imagem${index}`} />
       </button>
@@ -63,18 +65,21 @@ function ListaMusicas() {
     }
   }
 
+  useEffect(() => {
+    // Recuperar os dados do localStorage e definir o estado inicial de musicas
+    const newTracksString = localStorage.getItem('newTracks');
+    const newTracks = JSON.parse(newTracksString) || [];
+    setMusicas(newTracks);
+  }, []);
+
   return (
-
     <div className='ss'>
-
-      {musicas.map((musica, index) => (
+      {musicas.map((track, index) => (
         <Musica
-          key={musica.id}
+          key={track.id}
           index={index}
-          nome={musica.nome}
-          artista={musica.artista}
-          album={musica.album}
-          favorita={musica.favorita}
+          track={track}
+          favorita={track.favorita}
           imagemFavorita={imagemFavorita}
           onDelete={() => deletar(index)}
           onToggleFavorita={() => mudarcor(index)}
