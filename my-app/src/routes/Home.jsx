@@ -7,6 +7,8 @@ import LeftNavBar from "./components/LeftNavBar";
 
 
 
+
+
 function Musica(props) {
   const { index, nome, artista, album, favorita, imagemFavorita, onDelete, onToggleFavorita } = props;
 
@@ -39,11 +41,7 @@ function Musica(props) {
 }
 
 function ListaMusicas() {
-  const [musicas, setMusicas] = useState([
-    { id: 1, nome: "The Zephyr Song", artista: "Red Hot Chili Pepers", album: "By The Way", favorita: false },
-    { id: 2, nome: "Talk", artista: "Coldplay", album: "X&Y", favorita: false },
-    { id: 3, nome: "Firmamento", artista: "Cidade Negra", album: "Cidade Negra Acústico MTV", favorita: false }
-  ]);
+  const [musicas, setMusicas] = useState([]);
 
   const [imagemFavorita, setImagemFavorita] = useState("img/Property 1=Default.png");
 
@@ -66,9 +64,9 @@ function ListaMusicas() {
   }
 
   return (
-    
+
     <div className='ss'>
-      
+
       {musicas.map((musica, index) => (
         <Musica
           key={musica.id}
@@ -135,21 +133,21 @@ function mudarcor(num) {
   }
 }
 
- // apiSpotify.get ("/artists/0TnOYISbd1XYRBk9myaseg").then((response) => console.log(response.data));
-  //   .get("/api/users")
-  //   .then((response) => setUser(response.data))
-  //   .catch((err) => {
-  //     console.error("ops! ocorreu um erro" + err);
-  //   });
+// apiSpotify.get ("/artists/0TnOYISbd1XYRBk9myaseg").then((response) => console.log(response.data));
+//   .get("/api/users")
+//   .then((response) => setUser(response.data))
+//   .catch((err) => {
+//     console.error("ops! ocorreu um erro" + err);
+//   });
 
 
 const Home = () => {
   const [color, setcolor] = useState();
 
   return (
-    
+
     <div className="Home">
-       <LeftNavBar />
+      <LeftNavBar />
 
       <div className="main">
         <div className="upper">
@@ -171,7 +169,7 @@ const Home = () => {
         <div className="cabeçalhoMusica">
           <span className="titulo">#TITULO</span>
           <span className="alb">Album</span>
-         
+
 
           <hr className="linha"></hr>
 
