@@ -3,10 +3,10 @@
   height: 100%;
   background-color: black;
 }
-.main{
+.mainnnn{
   width: 84.91vw;
-  height: 130vh;
-  background-image: linear-gradient(to bottom, #5E44FF  10%, rgb(15, 15, 15)70% );
+  height: 230vh;
+  background-image: linear-gradient(to bottom, #5E44FF  10%, rgb(15, 15, 15)40% );
 }
 .album{
   width: 14vw;
@@ -240,10 +240,10 @@ background: #D9D9D9;
   background-color: black;
 }
 
-.main{
+.mainnnn{
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(to bottom, rgb(0, 174, 255) 10%, rgb(15, 15, 15)70% );
+  background-image: linear-gradient(to bottom, #5E44FF  10%, rgb(15, 15, 15)70% );
 }
 .album{
   width: 20vw;

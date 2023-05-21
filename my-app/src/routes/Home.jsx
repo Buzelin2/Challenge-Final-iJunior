@@ -154,7 +154,7 @@ const Home = () => {
     <div className="Home">
       <LeftNavBar />
 
-      <div className="main">
+      <div className="mainnnn">
         <div className="upper">
           <img className="album" src="img\image 4.png"></img>
           <div className="textos">
