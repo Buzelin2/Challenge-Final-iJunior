@@ -60,8 +60,8 @@ const InfoArtista = () => {
   const { id } = useParams()
   const [artists, setArtists] = useState([]);
   const [heartColors, setHeartColors] = useState(() => {
-    const savedHeartColors = Array(10).fill(false); // Array inicial com valores falsos
-    for (let i = 0; i < 10; i++) {
+    const savedHeartColors = Array(5).fill(false); // Array inicial com valores falsos
+    for (let i = 0; i < 5; i++) {
       const savedColor = localStorage.getItem(`heartColor_${id}_${i}`);
       if (savedColor !== null) {
         savedHeartColors[i] = JSON.parse(savedColor);
@@ -70,6 +70,10 @@ const InfoArtista = () => {
     return savedHeartColors;
   });
   const [likedTracks, setLikedTracks] = useState([]);
+  const [newTracks, setNewTracks] = useState(() => {
+    const savedTracks = localStorage.getItem('newTracks');
+    return savedTracks ? JSON.parse(savedTracks) : [];
+  });
 
 
 
@@ -84,10 +88,11 @@ const InfoArtista = () => {
       return newColors;
     });
   
-    setLikedTracks((prevTracks) => {
+    const track = artists[return_index()].topTracks[index];
+
+    setNewTracks((prevTracks) => {
       const newTracks = [...prevTracks];
-      const track = artists[return_index()].topTracks[index];
-  
+
       if (newTracks.some((t) => t.id === track.id)) {
         // Se a música já estiver curtida, remove do array
         const indexToRemove = newTracks.findIndex((t) => t.id === track.id);
@@ -96,14 +101,10 @@ const InfoArtista = () => {
         // Se a música não estiver curtida, adiciona ao array
         newTracks.push(track);
       }
-  
+
       // Salvar o vetor newTracks no localStorage
       localStorage.setItem('newTracks', JSON.stringify(newTracks));
-  
-      // Emitir evento personalizado para notificar outras páginas
-      const event = new CustomEvent('newTracksUpdated', { detail: newTracks });
-      window.dispatchEvent(event);
-  
+
       return newTracks;
     });
   }

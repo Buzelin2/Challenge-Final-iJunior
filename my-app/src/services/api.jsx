@@ -6,7 +6,7 @@ const api = axios.create({
   withCredentials: true,
 });
 
-const token = 'BQBpEGVRDbrpvr0KT-KhpOCHKnAa1zmpbB9QVFQxtMxEhWv0i3xPJCzN_-fiy2SfRl5-jUJnK10phIPaWK8ZnL60RkHeD1tdCogNf2hT9gI1udJjde542917nRHEiesR-o1jnWldvJETCiBO-EtI9DjZWIM5OxS3sTWYSC25OrbzbnP57guvytQZTw8p99N1nlpm6kLMCHAQdJ78rmcl11omWM7UnHJeWGp9sAuz8e1o6Q9dSFctPnzww6SgL2h12of09ZatkZqQeXD5blDLqFL8Rg';
+const token = 'BQDtizwshpE_RqtkZGcJ3Qa-UF5uFe4a42RrJlBRtfw7AGbLqTldN4THuGupYle4_IXWKUI0WEnqAeSBrUZDHP2buN0e3hW9xcsCnXTRpHkScep7jF__NO53md0OUBr_L3u2zSS6D98os1bBdgKqwHppHiYp-L49AMPoGFt6Eid8vbeLhYlLM0YmxGwCDn5uvl4n2f46EPMxkMZ9DSeNamKm1Aigl8_Kt1k-_ITZsDFtcP4VRFktleQcCSqaZOfOJsg_hV8vDVuT3_G7EMOSwi-n2w';
 const apiSpotify = axios.create({
   baseURL: "https://api.spotify.com/v1/",
   headers: {
