@@ -51,6 +51,9 @@ function ListaMusicas() {
     const novasMusicas = [...musicas];
     novasMusicas.splice(index, 1);
     setMusicas(novasMusicas);
+
+    // Atualizar o vetor newTracks no localStorage
+    localStorage.setItem('newTracks', JSON.stringify(novasMusicas));
   }
 
   function mudarcor(index) {
